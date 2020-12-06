@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from aoc import get_paras, get_input
+from aoc import get_paras
 import re
 
 
@@ -87,7 +87,7 @@ def run(input):
     return n
 
 
-if __name__ == '__main__':
+def main():
     assert(byr('2002')) == True
     assert(byr('2003')) == False
     assert(hgt('60in')) == True
@@ -102,35 +102,11 @@ if __name__ == '__main__':
     assert(pid('000000001')) == True
     assert(pid('0123456789')) == False
 
-    assert run(get_paras('''
-        eyr:1972 cid:100
-        hcl:#18171d ecl:amb hgt:170 pid:186cm iyr:2018 byr:1926
+    assert run(get_paras('d04.example.invalid')) == 0
+    assert run(get_paras('d04.example.valid')) == 4
 
-        iyr:2019
-        hcl:#602927 eyr:1967 hgt:170cm
-        ecl:grn pid:012533040 byr:1946
+    return run(get_paras('d04'))
 
-        hcl:dab227 iyr:2012
-        ecl:brn hgt:182cm pid:021572410 eyr:2020 byr:1992 cid:277
 
-        hgt:59cm ecl:zzz
-        eyr:2038 hcl:74454a iyr:2023
-        pid:3556412378 byr:2007
-    ''')) == 0
-
-    assert run(get_paras('''
-        pid:087499704 hgt:74in ecl:grn iyr:2012 eyr:2030 byr:1980
-        hcl:#623a2f
-
-        eyr:2029 ecl:blu cid:129 byr:1989
-        iyr:2014 pid:896056539 hcl:#a97842 hgt:165cm
-
-        hcl:#888785
-        hgt:164cm byr:2001 iyr:2015 cid:88
-        pid:545766238 ecl:hzl
-        eyr:2022
-
-        iyr:2010 hgt:158cm hcl:#b6652a ecl:blu byr:1944 eyr:2021 pid:093154719
-    ''')) == 4
-
-    print(run(get_input('d04', lines=False, paras=True)))
+if __name__ == '__main__':
+    print(main())

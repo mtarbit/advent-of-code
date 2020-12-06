@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from aoc import get_lines, get_input
+from aoc import get_lines
 
 
 def run(input):
@@ -19,18 +19,10 @@ def run(input):
     return n
 
 
+def main():
+    assert run(get_lines('d03.example')) == 7
+    return run(get_lines('d03'))
+
+
 if __name__ == '__main__':
-    assert run(get_lines('''
-        ..##.......
-        #...#...#..
-        .#....#..#.
-        ..#.#...#.#
-        .#...##..#.
-        ..#.##.....
-        .#.#.#....#
-        .#........#
-        #.##...#...
-        #...##....#
-        .#..#...#.#
-    ''')) == 7
-    print(run(get_input('d03')))
+    print(main())

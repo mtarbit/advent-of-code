@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from aoc import get_lines, get_input
+from aoc import get_lines
 import re
 
 
@@ -26,10 +26,10 @@ def run(input):
     return n
 
 
+def main():
+    assert run(get_lines('d02.example')) == 2
+    return run(get_lines('d02'))
+
+
 if __name__ == '__main__':
-    assert run(get_lines('''
-        1-3 a: abcde
-        1-3 b: cdefg
-        2-9 c: ccccccccc
-    ''')) == 2
-    print(run(get_input('d02')))
+    print(main())

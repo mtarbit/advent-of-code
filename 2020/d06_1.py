@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from aoc import get_paras, get_input
+from aoc import get_paras
 
 
 def run(input):
@@ -14,22 +14,10 @@ def run(input):
     return count
 
 
+def main():
+    assert run(get_paras('d06.example')) == 11
+    return run(get_paras('d06'))
+
+
 if __name__ == '__main__':
-    assert run(get_paras('''
-        abc
-
-        a
-        b
-        c
-
-        ab
-        ac
-
-        a
-        a
-        a
-        a
-
-        b
-    ''')) == 11
-    print(run(get_input('d06', lines=False, paras=True)))
+    print(main())

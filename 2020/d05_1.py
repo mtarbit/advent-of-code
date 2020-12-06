@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from aoc import get_paras, get_input
+from aoc import get_lines
 
 
 def get_seat_id(s):
@@ -23,8 +23,12 @@ def run(input):
     return max_seat_id
 
 
-if __name__ == '__main__':
+def main():
     assert get_seat_id('BFFFBBFRRR') == 567
     assert get_seat_id('FFFBBBFRRR') == 119
     assert get_seat_id('BBFFBBFRLL') == 820
-    print(run(get_input('d05')))
+    return run(get_lines('d05'))
+
+
+if __name__ == '__main__':
+    print(main())

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from aoc import get_paras, get_input
+from aoc import get_paras
 from collections import defaultdict
 
 
@@ -19,22 +19,10 @@ def run(input):
     return total
 
 
+def main():
+    assert run(get_paras('d06.example')) == 6
+    return run(get_paras('d06'))
+
+
 if __name__ == '__main__':
-    assert run(get_paras('''
-        abc
-
-        a
-        b
-        c
-
-        ab
-        ac
-
-        a
-        a
-        a
-        a
-
-        b
-    ''')) == 6
-    print(run(get_input('d06', lines=False, paras=True)))
+    print(main())

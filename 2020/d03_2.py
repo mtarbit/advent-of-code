@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 
-from aoc import get_lines, get_input
+from aoc import get_lines
 from functools import reduce
 from operator import mul
 
@@ -38,19 +38,10 @@ def run(input):
     return reduce(mul, trees)
 
 
-if __name__ == '__main__':
-    assert run(get_lines('''
-        ..##.......
-        #...#...#..
-        .#....#..#.
-        ..#.#...#.#
-        .#...##..#.
-        ..#.##.....
-        .#.#.#....#
-        .#........#
-        #.##...#...
-        #...##....#
-        .#..#...#.#
-    ''')) == 336
-    print(run(get_input('d03')))
+def main():
+    assert run(get_lines('d03.example')) == 336
+    return run(get_lines('d03'))
 
+
+if __name__ == '__main__':
+    print(main())
