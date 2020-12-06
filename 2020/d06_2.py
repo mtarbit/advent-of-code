@@ -1,17 +1,22 @@
 #!/usr/bin/env python3
 
 from aoc import get_paras, get_input
+from collections import defaultdict
 
 
 def run(input):
-    count = 0
+    total = 0
     for group in input:
         lines = group.splitlines()
-        yeses = set()
+        yeses = defaultdict(int)
+        group_size = len(lines)
         for line in lines:
-            yeses.update(set(line))
-        count += len(yeses)
-    return count
+            for char in line:
+                yeses[char] += 1
+        for char, count in yeses.items():
+            if count == group_size:
+                total += 1
+    return total
 
 
 if __name__ == '__main__':
@@ -31,5 +36,5 @@ if __name__ == '__main__':
         a
 
         b
-    ''')) == 11
+    ''')) == 6
     print(run(get_input('d06', lines=False, paras=True)))
